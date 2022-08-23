@@ -12,10 +12,9 @@
     <a :href="url" target="black"> 知乎 用:写</a>
     <br />
     <a v-bind:href="url" target="black"> 知乎 v-bind</a> -->
-    <button @click="sayHi('你好', $event)">点击sayhi</button>
-    <br />
-    <button v-on:click="num++">num++</button>
-    <span> {{ num }}</span>
+
+    <button @click="sayHi">点击sayhi</button>
+    
   </div>
 </template>
 
@@ -25,13 +24,11 @@ export default {
     return {
       a: "aaaaa",
       url: "http://www.zhihu.com/",
-      num: 0,
     };
   },
   methods: {
-    sayHi(msg, e) {
-      console.log(msg);
-      console.log("e:", e);
+    sayHi: function () {
+      alert("Hello");
     },
   },
 };
