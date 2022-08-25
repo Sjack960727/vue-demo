@@ -7,12 +7,6 @@ Vue.config.productionTip = false;
 Vue.filter("toLower", function (str) {
   return str.toLowerCase();
 });
-
-
 new Vue({
   render: (h) => h(App),
 }).$mount("#app");
-
-
-
-

@@ -26,7 +26,7 @@
 
             <!-- 如果价格超过100，就有red这个类 -->
             <td :class="{ red: item.price > 100 }">{{ item.price }}</td>
-            <td>{{ item.time | formatTime }}</td>
+            <td>{{ item.time }}</td>
             <td><a href="#" @click="delList(item)">删除</a></td>
           </tr>
         </tbody>
@@ -74,7 +74,6 @@
 </template>
 
 <script>
-import dayjs from "dayjs";
 export default {
   data() {
     return {
@@ -110,11 +109,6 @@ export default {
 
       this.name = "";
       this.price = 0;
-    },
-  },
-  filters: {
-    formatTime(time) {
-      return dayjs(time).format("YYYY-MM-DD HH:mm:ss");
     },
   },
 };
