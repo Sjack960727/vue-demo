@@ -85,13 +85,12 @@ export default {
     return {
       name: "", // 名称
       price: 0, // 价格
-      // list: [
-      //   { id: 100, name: "外套", price: 199, time: new Date("2010-08-12") },
-      //   { id: 101, name: "裤子", price: 34, time: new Date("2013-09-01") },
-      //   { id: 102, name: "鞋", price: 25.4, time: new Date("2018-11-22") },
-      //   { id: 103, name: "头发", price: 19900, time: new Date("2020-12-12") },
-      // ],
-      list: JSON.parse(localStorage.getItem("list")) || [],
+      list: [
+        { id: 100, name: "外套", price: 199, time: new Date("2010-08-12") },
+        { id: 101, name: "裤子", price: 34, time: new Date("2013-09-01") },
+        { id: 102, name: "鞋", price: 25.4, time: new Date("2018-11-22") },
+        { id: 103, name: "头发", price: 19900, time: new Date("2020-12-12") },
+      ],
     };
   },
   methods: {
@@ -131,15 +130,6 @@ export default {
     },
     averagePrice() {
       return (this.totalPrice / this.list.length).toFixed(2);
-    },
-  },
-  watch: {
-    list: {
-      deep: true,
-      immediate: true,
-      handler(newList) {
-        window.localStorage.setItem("list", JSON.stringify(newList));
-      },
     },
   },
 };

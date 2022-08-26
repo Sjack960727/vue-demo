@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Object.defineProperty
+      const obj = {};
+      // obj.name = '张三'
+      // console.log(obj)
+
+      //  Object.defineProperty(对象,属性名,配置对象)
+      // { get(){},set(){} } get:读取属性调用, set修改属性的时候被调用
+      //
+      Object.defineProperty(obj, "name", {
+        value: "张三", // 读取的值, 和get只能有一个
+        writable: false, // 是否能修改属性,和set只能有一个
+        enumerable: false, // 当前的属性是否能被for in 循环出来
+        configurable: false, // 能否被delete
+        // get(){
+        //   return '张三'
+        // },
+        // set(newVal){
+        //   console.log('name被修改了',newVal)
+        // }
+      });
+
+      console.log(obj.name);
+      // obj.name = '李四'
+    </script>
+  </body>
+</html>
